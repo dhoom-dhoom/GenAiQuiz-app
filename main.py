@@ -2,7 +2,7 @@ from g4f.client import Client
 import asyncio,wikipedia,random
 from asyncio.windows_events import WindowsSelectorEventLoopPolicy
 from g4f.Provider import Ollama,Llama,Blackbox,RetryProvider
-asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())
+asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy()) #Comment it out if not in windows
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
 import nltk
@@ -163,6 +163,7 @@ class Generate:
         store.append(store.index(answer))
         return store
 
+#Everything modifiable starts here
 topic=input("Enter topic for quiz: ")
 if len(wikipedia.search(topic))==0:
     print("Enter a Valid topic")
